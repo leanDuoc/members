@@ -6,6 +6,8 @@ import Avatar from '@mui/material/Avatar';
 import Add from "../assets/add.svg"
 import Remove from "../assets/remove.svg"
 import Oval from "../assets/Oval.jpg"
+import Edit from "../assets/Edit.svg"
+import Delete from "../assets/Delete.svg"
 
 const Comment = () => {
   const [isMyComment, setIsMyComment] = useState(false)
@@ -35,12 +37,12 @@ const Comment = () => {
               </div>
               
               {isMyComment ? <div className='flex gap-4'>
-                <div className='flex'>
-                <DeleteIcon/>
+                <div className='flex items-center gap-1'>
+                <img src={Delete} alt="" className='h-[14px] w-[14px]' />
                 <p className='text-[#ED6368] font-bold'>Delete</p>
                 </div>
-                <div className='flex'>
-                  <EditIcon/>
+                <div className='flex items-center gap-1'>
+                  <img src={Edit} alt="" className='h-[14px] w-[14px]'/>
                   <p className='text-[#5357B6] font-bold'>Edit</p>
                 </div>
               </div> : <div className='flex gap-4 text-[#5357B6]'>
