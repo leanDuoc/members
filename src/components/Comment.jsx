@@ -5,6 +5,8 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import Avatar from '@mui/material/Avatar';
 import Add from "../assets/add.svg"
 import Remove from "../assets/remove.svg"
+import Oval from "../assets/Oval.jpg"
+
 const Comment = () => {
   const [isMyComment, setIsMyComment] = useState(false)
 
@@ -26,25 +28,20 @@ const Comment = () => {
         <div className='rightbar'>
           <div className='flex justify-between mb-2'>
               <div className='flex gap-4 items-center'>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
-                  sx={{ width: 24, height: 24 }}
-                />
-                <img src="" alt="" />
+                <img src={Oval} alt="" className='rounded-[50%]'/>
                 <p className='font-semibold text-[#334253]'>juliusomo</p>
-                {isMyComment && <p>you</p>}
+                {isMyComment && <div className='bg-[#5357B6] text-white px-2 rounded-sm pb-[2px] flex items-center'><p className='text-[14px]'>you</p></div>}
                 <p className='text-[#67727E]'>2 days ago</p>
               </div>
               
               {isMyComment ? <div className='flex gap-4'>
                 <div className='flex'>
                 <DeleteIcon/>
-                <p>Delete</p>
+                <p className='text-[#ED6368] font-bold'>Delete</p>
                 </div>
                 <div className='flex'>
                   <EditIcon/>
-                  <p>Edit</p>
+                  <p className='text-[#5357B6] font-bold'>Edit</p>
                 </div>
               </div> : <div className='flex gap-4 text-[#5357B6]'>
                 <ReplyIcon/>
